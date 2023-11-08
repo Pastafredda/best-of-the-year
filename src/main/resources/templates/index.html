@@ -12,16 +12,14 @@
 <h2 th:text="${name}"></h2>
 <div>
     <div>
-        <a href="/movies">vai in movie</a>
         <ul style="list-style-type:none">
-            <li th:text="${movies}"></li>
+            <li th:each="movie : ${movies}" th:text="${movie.title}"></li>
         </ul>
     </div>
 
     <div>
-        <a href="/songs">vai in songs</a>
         <ul style="list-style-type:none">
-            <li th:text="${songs}"></li>
+            <li th:each="song : ${songs}" th:text="${song.title}"></li>
         </ul>
     </div>
 

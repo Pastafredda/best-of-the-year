@@ -1,38 +1,43 @@
 package com.experis.course.bestoftheyear.controller;
 
+import com.experis.course.bestoftheyear.model.Movie;
+import com.experis.course.bestoftheyear.model.Song;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 @Controller
 @RequestMapping("/")
 public class IndexController {
 
-    @GetMapping("home")
+    @GetMapping()
     public String nome(Model model) {
         model.addAttribute("name", "Matteo");
         return "index";
     }
 
-    private ArrayList<String> getBestMovies() {
-        ArrayList<String> moviesList = new ArrayList<>();
-        moviesList.add("Fight Club");
-        moviesList.add("Django");
-        moviesList.add("Shutter Island");
-        moviesList.add("Carlito's Way");
-        return moviesList;
+    private List<Movie> getBestMovies() {
+        Movie[] moviesList = {
+                new Movie("1", "Fight Club"),
+                new Movie("2", "Shutter Island"),
+                new Movie("3", "Django"),
+                new Movie("4", "Carlito's Way")
+        };
+        return Arrays.asList(moviesList);
     }
 
-    private ArrayList<String> getBestSongs() {
-        ArrayList<String> songsList = new ArrayList<>();
-        songsList.add("The man who sold the world");
-        songsList.add("Stairway to Heaven");
-        songsList.add("Comforably Numb");
-        songsList.add("I Say I' Sto Ccà");
-        return songsList;
+    private List<Song> getBestSongs() {
+        Song[] songsList = {
+                new Song("1", "The man who sold the world"),
+                new Song("2", "Stairway to Heaven"),
+                new Song("3", "Comfortably Numb"),
+                new Song("4", "I Say I' Sto Ccà")
+        };
+        return Arrays.asList(songsList);
     }
 
     @GetMapping("/movies")
