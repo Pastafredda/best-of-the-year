@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Movie Detail</title>
-</head>
+<head th:insert="/fragments/resources :: headResources('Movie Detail')"></head>
 <body>
+<nav th:replace="/fragments/navbar :: topNavbar('movie')"></nav>
+
 <h1>Movie Detail</h1>
 <ul style="list-style-type:none">
     <li>Titolo : <b>[[${movie.title}]]</b></li>
@@ -12,6 +11,7 @@
 </ul>
 
 <span>Torna alla pagina dei <a th:href="@{/movies}">film</a></span>
+<th:block th:replace="/fragments/resources :: jsResources"></th:block>
 
 </body>
 </html>
