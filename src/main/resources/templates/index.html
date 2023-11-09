@@ -13,13 +13,17 @@
 <div>
     <div>
         <ul style="list-style-type:none">
-            <li th:each="movie : ${movies}" th:text="${movie.title}"></li>
+            <li th:each="movie : ${movies}">
+                <a th:href="@{|/movies/${movie.id}|}" th:text="|${movie.title} - ${movie.id}|"></a>
+            </li>
         </ul>
     </div>
 
     <div>
         <ul style="list-style-type:none">
-            <li th:each="song : ${songs}" th:text="${song.title}"></li>
+            <li th:each="song : ${songs}">
+                <a th:href="@{|/songs/${song.id}|}" th:text="|${song.title} - ${song.id}|"></a>
+            </li>
         </ul>
     </div>
 

@@ -2,19 +2,19 @@ package com.experis.course.bestoftheyear.model;
 
 public class Movie {
 
-    private String id;
+    private int id;
     private String title;
 
-    public Movie(String id, String title) {
+    public Movie(int id, String title) {
         this.id = id;
         this.title = title;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Detail</title>
+</head>
+<body>
+<h1>Movie Detail</h1>
+<ul style="list-style-type:none">
+    <li>Titolo : <b>[[${movie.title}]]</b></li>
+    <li>Id : <b>[[${movie.id}]]</b></li>
+</ul>
+
+<span>Torna alla pagina dei <a th:href="@{/movies}">film</a></span>
+
+</body>
+</html>
